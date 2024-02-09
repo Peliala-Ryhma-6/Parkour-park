@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -222,7 +222,7 @@ Transform:
   m_GameObject: {fileID: 273792143}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5921, y: 1.1886, z: 2.38}
+  m_LocalPosition: {x: 0.5921, y: -0.467, z: 2.38}
   m_LocalScale: {x: 0.09631364, y: 2.256934, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2039,8 +2039,8 @@ Transform:
   m_GameObject: {fileID: 1628682399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0755, y: 0.23, z: 2.38}
-  m_LocalScale: {x: 3.292389, y: 4.174329, z: 1}
+  m_LocalPosition: {x: -1.0755, y: -0.8, z: 2.38}
+  m_LocalScale: {x: 3.292389, y: 2.8874607, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2526,7 +2526,7 @@ Transform:
   m_GameObject: {fileID: 974238578272594464}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.92999995, z: 0}
+  m_LocalPosition: {x: 0, y: -2.538321, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4149,7 +4149,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44500005
+      value: -1.163321
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -4237,7 +4237,7 @@ PrefabInstance:
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44500005
+      value: -1.163321
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
@@ -6488,6 +6488,5 @@ SceneRoots:
   - {fileID: 1200700625}
   - {fileID: 2119775931110464240}
   - {fileID: 1883833596}
-  - {fileID: 2058594054}
   - {fileID: 273792147}
   - {fileID: 1628682403}
