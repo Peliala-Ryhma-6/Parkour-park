@@ -1,5 +1,7 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Vaulting : MonoBehaviour
@@ -9,17 +11,25 @@ public class Vaulting : MonoBehaviour
     private float playerHeight = 1.8f;
     private float playerRadius = 0.28f;
 
-     private Animator animator;
+    private Animator animator;
+    private StarterAssetsInputs starterAssetsInputs;
+
 
     void Start()
     {
-          animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        starterAssetsInputs = GetComponent<StarterAssetsInputs>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Vault();
+
+        if(animator.GetBool("IsClimbing"))
+        {
+            starterAssetsInputs.move = Vector2.zero;
+        }
     }
     private void Vault()
     {
@@ -28,7 +38,6 @@ public class Vaulting : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.forward, out var firstHit, 1f, vaultLayer))
             {
                 Debug.Log("Vaultable in front");
-                animator.SetBool("IsClimbing", true);
 
                 if (Physics.Raycast(firstHit.point + (transform.forward * playerRadius) + (Vector3.up * 0.6f * playerHeight), Vector3.down, out var secondHit, playerHeight))
                 {
@@ -41,6 +50,7 @@ public class Vaulting : MonoBehaviour
     }
     IEnumerator LerpVault(Vector3 targetPosition, float duration)
     {
+        animator.SetBool("IsClimbing", true);
         float time = 0;
         Vector3 startPosition = transform.position;
 
