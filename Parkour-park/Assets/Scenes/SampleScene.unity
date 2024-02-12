@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2851,6 +2851,7 @@ GameObject:
   - component: {fileID: 3543048675183670876}
   - component: {fileID: 974238578272594476}
   - component: {fileID: 7018120648351318225}
+  - component: {fileID: 7018120648351318226}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -5716,6 +5717,21 @@ MonoBehaviour:
   vaultLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &7018120648351318226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974238578272594464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431b0be626b3fb1408baaa541ddbc371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 974238578272594474}
+  animator: {fileID: 5777780408379173600}
+  crouchHeight: 1.2
 --- !u!4 &7082370649296489314
 Transform:
   m_ObjectHideFlags: 0
