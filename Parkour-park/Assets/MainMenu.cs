@@ -5,11 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    FadeInOut fade;
+
+    private void Start()
+    {
+        fade = FindObjectOfType<FadeInOut>();
+        fade.FadeOut();
+    }
+
     public void PlayGame ()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(1);
-        
+        StartCoroutine(ChangeScene());
     }
 
     public void QuitGame ()
@@ -21,5 +27,13 @@ public class MainMenu : MonoBehaviour
             Debug.log("QUIT!");
             Application.Quit();
 #endif
+    }
+
+    public IEnumerator ChangeScene()
+    {
+        Time.timeScale = 1f;
+        fade.FadeIn();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("SampleScene");
     }
 }

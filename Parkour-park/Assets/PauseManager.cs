@@ -1,10 +1,11 @@
 using StarterAssets;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
-
+    FadeInOut fade;
     public GameObject pauseMenuUI; // Reference to the Pause Menu canvas
     public ThirdPersonController cameraMovement;
     public GameObject ThirdPersonEventSystem;
@@ -16,6 +17,7 @@ public class PauseManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fade = FindObjectOfType<FadeInOut>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -91,6 +93,13 @@ public class PauseManager : MonoBehaviour
     }
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(ChangeScene1());
+    }
+    public IEnumerator ChangeScene1()
+    {
+        Time.timeScale = 1f;
+        fade.FadeIn();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("MainMenu");
     }
 }
