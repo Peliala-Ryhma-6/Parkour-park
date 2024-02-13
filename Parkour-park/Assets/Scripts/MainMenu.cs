@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         fade = FindObjectOfType<FadeInOut>();
-        fade.FadeOut();
+        StartCoroutine(FadeOut());
     }
 
     public void PlayGame ()
@@ -35,5 +35,11 @@ public class MainMenu : MonoBehaviour
         fade.FadeIn();
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public IEnumerator FadeOut()
+    {
+        yield return new WaitForSeconds(1);
+        fade.FadeOut();
     }
 }

@@ -20,6 +20,7 @@ public class PauseManager : MonoBehaviour
         fade = FindObjectOfType<FadeInOut>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        StartCoroutine(Fadeout());
     }
 
     // Update is called once per frame
@@ -101,5 +102,11 @@ public class PauseManager : MonoBehaviour
         fade.FadeIn();
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public IEnumerator Fadeout() 
+    {
+        yield return new WaitForSeconds(1);
+        fade.FadeOut();
     }
 }
