@@ -5,14 +5,17 @@ public class CrouchController : MonoBehaviour
     public CharacterController controller;
     public Animator animator;
 
-    public float crouchHeight = 1.0f;
+    private float crouchHeight;
     private float originalHeight;
+    private Vector3 originalCenter;
     private bool isCrouching = false;
 
     void Start()
     {
+        controller = GetComponent<CharacterController>();  // Correct assignment
+        originalCenter = controller.center;
         originalHeight = controller.height;
-        
+        crouchHeight = originalHeight / 2;
     }
 
     void Update()
@@ -21,9 +24,10 @@ public class CrouchController : MonoBehaviour
         {
             isCrouching = !isCrouching;
             animator.SetBool("isCrouching", isCrouching);
+            controller.height = isCrouching ? crouchHeight : originalHeight;
+            controller.center = new Vector3(0, controller.height / 2, 0);
         }
 
-        // float targetHeight = isCrouching ? crouchHeight : originalHeight;
-        // controller.height = Mathf.Lerp(controller.height, targetHeight, Time.deltaTime * 10f);
+
     }
 }
