@@ -10,12 +10,13 @@ public class CrouchController : MonoBehaviour
     private Vector3 originalCenter;
     private bool isCrouching = false;
 
+
     void Start()
     {
         controller = GetComponent<CharacterController>();  // Correct assignment
         originalCenter = controller.center;
         originalHeight = controller.height;
-        crouchHeight = originalHeight / 2;
+        crouchHeight = originalHeight / 2.00f;
     }
 
     void Update()
@@ -25,7 +26,15 @@ public class CrouchController : MonoBehaviour
             isCrouching = !isCrouching;
             animator.SetBool("isCrouching", isCrouching);
             controller.height = isCrouching ? crouchHeight : originalHeight;
-            controller.center = new Vector3(0, controller.height / 2, 0);
+            controller.center = isCrouching ? new Vector3(0, 0.46f, 0) : new Vector3(0, 0.93f, 0);
+        }
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W)) && isCrouching)
+        {
+            animator.SetBool("IsCrouchWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsCrouchWalking", false);
         }
 
 
