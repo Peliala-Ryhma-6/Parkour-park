@@ -12,13 +12,14 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
-
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+
+		public Animator animator;
 
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
@@ -58,7 +59,13 @@ namespace StarterAssets
 
 		public void JumpInput(bool newJumpState)
 		{
+			if (animator.GetBool("isCrouching") == true)
+			{
+				return;
+			}
+			else {
 			jump = newJumpState;
+			}
 		}
 
 		public void SprintInput(bool newSprintState)
@@ -75,6 +82,7 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
+		
 	}
 	
 }
