@@ -70,7 +70,12 @@ namespace StarterAssets
 
 		public void SprintInput(bool newSprintState)
 		{
+			if (animator.GetBool("isCrouching") == true)
+			{
+				return;
+			} else {
 			sprint = newSprintState;
+			}
 		}
 
 		private void OnApplicationFocus(bool hasFocus)
