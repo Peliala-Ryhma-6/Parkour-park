@@ -4358,6 +4358,7 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+  animator: {fileID: 5777780408379173600}
 --- !u!4 &3561202353267407263
 Transform:
   m_ObjectHideFlags: 0
