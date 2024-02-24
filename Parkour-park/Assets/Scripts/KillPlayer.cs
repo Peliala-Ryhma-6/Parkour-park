@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class KillPlayer : MonoBehaviour
 {
     public int Respawn;
+    public Timer timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,8 @@ public class KillPlayer : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            string timerText = timer.GetTimerText();
+            Debug.Log("Your time was: "+timer.GetTimerText());
             SceneManager.LoadScene(Respawn);
         }
     }
