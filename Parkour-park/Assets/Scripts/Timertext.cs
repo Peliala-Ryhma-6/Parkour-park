@@ -14,9 +14,14 @@ public class Timer : MonoBehaviour
     void Update()
     {
         float elapsedTime = Time.time - startTime;
-        string minutes = ((int) elapsedTime / 60).ToString();
-        string seconds = (elapsedTime % 60).ToString("f2");
+        int minutes = (int) elapsedTime / 60;
+        int seconds = (int) elapsedTime % 60;
+        int milliseconds = (int) (elapsedTime * 1000) % 1000;
 
-        timerText.text = minutes + ":" + seconds;
+        timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("000");
+    }
+    public string GetTimerText()
+    {
+        return timerText.text;
     }
 }
