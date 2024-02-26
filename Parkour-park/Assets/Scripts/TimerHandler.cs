@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KillPlayer : MonoBehaviour
+public class TimerHandler : MonoBehaviour
 {
-    public int Respawn;
+    public Timer timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,8 @@ public class KillPlayer : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(Respawn);
+            string timerText = timer.GetTimerText();
+            Debug.Log("Your time was: "+timer.GetTimerText());
         }
     }
 }
