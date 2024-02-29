@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         Debug.Log("Quitted from unity editor!");
 #else
-            Debug.log("QUIT!");
+            Debug.Log("QUIT!");
             Application.Quit();
 #endif
     }
